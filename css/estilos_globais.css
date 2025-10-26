@@ -1,0 +1,576 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* --- PALETA DE CORES (Mínimo 8 cores - Terra Renovada) --- */
+    --cor-primaria-base: #38761d;       /* Verde Musgo - Foco (Cor0) */
+    --cor-primaria-clara: #8fbc8f;      /* Verde Claro - Destaque (Cor3) */
+    --cor-secundaria-base: #a0522d;      /* Marrom Terra - Fundo Header/Nav (Cor5) */
+    --cor-secundaria-clara: #f18552;    /* Laranja Telha - Gradiente Header */
+    --cor-neutra-fundo: #E5D5B6;        /* Bege Claro - Fundo da Página (Cor7) */
+    --cor-neutra-texto: #484949;        /* Cinza Escuro - Texto (Cor8) */
+    --cor-link-ativo: #1c4587;          /* Azul Profundo (Cor1) */
+    --cor-link-hover: #4682b4;          /* Azul Claro (Cor4) */
+
+    /* --- TIPOGRAFIA (Mínimo 5 tamanhos) --- */
+    --fonte-familia-principal: 'Montserrat', sans-serif;
+    --fonte-familia-titulo: 'Bebas Neue', cursive; /* Para títulos de impacto */
+
+    /* Tamanhos (Base 1rem = 16px) */
+    --tamanho-h1: 3.5rem;   /* 56px - Título principal */
+    --tamanho-h2: 2.25rem;  /* 36px - Subtítulos de seção */
+    --tamanho-h3: 1.5rem;   /* 24px - Títulos de componentes */
+    --tamanho-base: 1.05rem; /* 16.8px - Texto do corpo */
+    --tamanho-pequeno: 0.75rem; /* 12px - Rodapé/Metadados */
+
+    /* --- ESPAÇAMENTO MODULAR (8px, 16px, 24px, 32px, 48px, 64px) --- */
+    --espaco-xs: 0.5rem;    /* 8px */
+    --espaco-sm: 1rem;      /* 16px */
+    --espaco-md: 1.5rem;    /* 24px */
+    --espaco-lg: 2rem;      /* 32px */
+    --espaco-xl: 3rem;      /* 48px */
+    --espaco-xxl: 4rem;     /* 64px */
+
+    /* Outros */
+    --borda-raio: 0.5rem; /* 8px */
+    --sombra-padrao: 0 4px 8px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------------------------------------------------
+    RESET/ESCONDENDO ELEMENTOS DE CONTROLE
+    --------------------------------------------------------- */
+
+/* Esconde o checkbox usado para controlar o menu de hambúrguer */
+.menu-toggle {
+    display: none;
+    visibility: hidden;
+}
+
+/* Aplicação da fonte importada */
+body {
+    font-family: var(--fonte-familia-principal);
+    background-color: var(--cor-neutra-fundo);
+    color: var(--cor-neutra-texto);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Reset básico para links e listas */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+}
+
+/* ---------------------------------------------------------
+    LAYOUT PRINCIPAL (GRID)
+    --------------------------------------------------------- */
+
+main.grid-container {
+    min-width: unset;
+    max-width: 1200px;
+    width: 90%;
+    margin: var(--espaco-lg) auto;
+    padding: var(--espaco-lg);
+    background-color: white;
+    border-radius: var(--borda-raio);
+    box-shadow: var(--sombra-padrao);
+
+    /* GRID DE 12 COLUNAS */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espaco-md);
+}
+
+.grid-item-12 {
+    grid-column: span 12;
+    background-color: white;
+    padding: 0;
+    box-shadow: none;
+    border-radius: unset;
+    margin-bottom: var(--espaco-md);
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor-secundaria-clara), var(--cor-secundaria-base));
+    min-height: 150px;
+    padding: var(--espaco-lg) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0.8rem;
+    display: block;
+    max-width: 165px;
+    height: auto;
+}
+
+header h1, header p {
+    color: var(--cor-neutra-fundo);
+    text-shadow: 4px 3px 2px rgba(0, 0, 0, 0.473);
+    font-family: var(--fonte-familia-titulo);
+    text-align: center;
+}
+
+header h1 {
+    font-size: var(--tamanho-h1);
+}
+
+header .slogan {
+    font-size: var(--tamanho-h3);
+}
+
+/* ---------------------------------------------------------
+    NAVEGAÇÃO (GLOBAL - DESKTOP E MOBILE)
+    --------------------------------------------------------- */
+.nav-principal {
+    display: flex;
+    justify-content: center;
+    background-color: var(--cor-secundaria-base);
+    padding: var(--espaco-sm) 0;
+    box-shadow: var(--sombra-padrao);
+}
+
+.nav-links a {
+    color: var(--cor-neutra-fundo);
+    padding: var(--espaco-xs) var(--espaco-sm);
+    margin: 0 var(--espaco-xs);
+    border-radius: var(--borda-raio);
+    white-space: nowrap;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: var(--cor-neutra-fundo);
+    color: var(--cor-secundaria-base);
+}
+
+.nav-links a.ativo {
+    background-color: var(--cor-link-ativo);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espaco-xs);
+}
+
+.seta-dropdown {
+    font-size: 0.6rem;
+    transition: transform 0.3s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    background-color: var(--cor-secundaria-base);
+    box-shadow: var(--sombra-padrao);
+    border-radius: 0 0 var(--borda-raio) var(--borda-raio);
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    padding: var(--espaco-sm);
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--cor-neutra-fundo);
+    color: var(--cor-secundaria-base);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .seta-dropdown {
+    transform: rotate(180deg);
+}
+
+/* ---------------------------------------------------------
+    CONTEÚDO E TIPOGRAFIA
+    --------------------------------------------------------- */
+main h2 {
+    font-size: var(--tamanho-h2);
+    color: var(--cor-primaria-base);
+    text-align: center;
+    padding: var(--espaco-sm) 0;
+    margin: var(--espaco-sm) 0;
+}
+
+main h3 {
+    font-size: var(--tamanho-h3);
+    color: var(--cor-primaria-base);
+}
+
+main p {
+    margin: var(--espaco-sm) 0;
+    text-align: justify;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+    border-radius: var(--borda-raio);
+}
+
+/* ---------------------------------------------------------
+    FOOTER PADRÃO
+    --------------------------------------------------------- */
+footer {
+    background-color: var(--cor-secundaria-base);
+    color: var(--cor-neutra-fundo);
+    text-align: center;
+    padding: var(--espaco-sm) 0;
+    font-size: var(--tamanho-pequeno);
+}
+
+/* ---------------------------------------------------------
+    COMPONENTES (Cards, Botões, Badges)
+    --------------------------------------------------------- */
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--espaco-lg);
+    margin-top: var(--espaco-lg);
+}
+
+.card {
+    background-color: #f7f7f7;
+    border-radius: var(--borda-raio);
+    box-shadow: var(--sombra-padrao);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.3);
+}
+
+.card-imagem {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.card-conteudo {
+    padding: var(--espaco-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-conteudo h3 {
+    margin-top: 0;
+    margin-bottom: var(--espaco-xs);
+}
+
+.card-botoes {
+    margin-top: var(--espaco-sm);
+    display: flex;
+    gap: var(--espaco-sm);
+    flex-wrap: wrap;
+}
+
+/* Botões (BTN) */
+.btn {
+    padding: var(--espaco-sm) var(--espaco-md);
+    border-radius: var(--borda-raio);
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.btn-primario {
+    background-color: var(--cor-primaria-base);
+    color: white;
+    border: 2px solid var(--cor-primaria-base);
+}
+
+.btn-primario:hover {
+    background-color: var(--cor-link-ativo);
+    border-color: var(--cor-link-ativo);
+    color: white;
+}
+
+.btn-secundario-outline {
+    background-color: transparent;
+    color: var(--cor-secundaria-base);
+    border: 2px solid var(--cor-secundaria-base);
+}
+
+.btn-secundario-outline:hover {
+    background-color: var(--cor-secundaria-base);
+    color: white;
+}
+
+/* Badges (Status) */
+.badge-status {
+    display: inline-block;
+    padding: var(--espaco-xs) 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: var(--espaco-sm);
+    text-transform: uppercase;
+}
+
+.badge-andamento {
+    background-color: var(--cor-primaria-clara);
+    color: var(--cor-primaria-base);
+    border: 1px solid var(--cor-primaria-base);
+}
+
+.badge-concluido {
+    background-color: var(--cor-link-ativo);
+    color: white;
+}
+
+/* --- ESTILOS DE FORMULÁRIO (PARA VALIDAÇÃO) --- */
+
+/* Classes de feedback visual (erro e sucesso) */
+.input-error {
+    border-color: var(--cor-erro, #f44336) !important;
+    box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.3) !important;
+}
+
+.input-success {
+    border-color: var(--cor-sucesso, #4CAF50) !important;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3) !important;
+}
+
+.error-message {
+    color: var(--cor-erro, #f44336);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: none; 
+}
+
+/* --- COMPONENTES DE FEEDBACK (ALERTS/TOASTS) --- */
+
+.alert-container {
+    padding: var(--espaco-md);
+    border-radius: var(--borda-raio);
+    font-weight: 600;
+    border-left: 5px solid;
+    margin-bottom: var(--espaco-md);
+    display: flex;
+    align-items: center;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: var(--cor-sucesso);
+    border-color: var(--cor-sucesso);
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: var(--cor-erro);
+    border-color: var(--cor-erro);
+}
+
+
+/* ---------------------------------------------------------
+    MEDIA QUERIES (Responsividade)
+    --------------------------------------------------------- */
+
+/* --- ESTILOS HAMBÚRGUER (SOMENTE MOBILE) --- */
+@media (max-width: 767px) {
+    .nav-principal {
+        display: flex;
+        justify-content: flex-end;
+        padding: var(--espaco-xs) var(--espaco-md);
+        position: relative;
+    }
+
+    .hamburguer-icon {
+        display: block;
+        z-index: 10;
+        cursor: pointer;
+        width: var(--espaco-lg);
+        height: var(--espaco-lg);
+        padding: var(--espaco-xs);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    .barra {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--cor-neutra-fundo);
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-secundaria-base);
+        flex-direction: column;
+        align-items: center;
+        box-shadow: var(--sombra-padrao);
+        padding: var(--espaco-sm) 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-links a {
+        padding: var(--espaco-sm) var(--espaco-lg);
+        margin: var(--espaco-xs) 0;
+        width: 90%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: var(--espaco-xs) 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown .dropbtn {
+        padding: var(--espaco-sm) var(--espaco-lg);
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        box-shadow: none;
+        border-radius: 0;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .dropdown-content a {
+        padding-left: calc(var(--espaco-lg) + var(--espaco-sm));
+        border-bottom: none;
+    }
+
+    .menu-toggle:checked ~ .hamburguer-icon + .nav-links {
+        display: flex;
+    }
+    
+    .menu-toggle:checked ~ .hamburguer-icon .barra:nth-child(2) { opacity: 0; }
+    .menu-toggle:checked ~ .hamburguer-icon .barra:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle:checked ~ .hamburguer-icon .barra:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+/* --- COMPORTAMENTO DESKTOP (ACIMA DE 767px) --- */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex !important;
+        position: static;
+        box-shadow: none;
+        padding: 0;
+        background-color: transparent;
+    }
+    
+    .nav-principal {
+        justify-content: center;
+    }
+    
+    .nav-links a {
+        width: auto;
+    }
+}
+
+/* =========================================================
+    LEIAUTES RESPONSIVOS (5 BREAKPOINTS)
+    ========================================================= */
+
+/* --- 1. CELULAR GRANDE (min-width: 576px) --- */
+@media (min-width: 576px) {
+    /* Nenhuma alteração específica aqui para o header com as novas instruções */
+}
+
+/* --- 2. TABLET (min-width: 768px) --- */
+@media (min-width: 768px) {
+    .grid-container {
+        gap: var(--espaco-lg);
+    }
+
+    .fale-conosco { grid-column: span 6; }
+    .quem-somos {
+        grid-column: span 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    header h1 {
+        font-size: var(--tamanho-h1);
+    }
+}
+
+/* --- 3. DESKTOP PEQUENO (min-width: 992px) --- */
+@media (min-width: 992px) {
+    .quem-somos { grid-column: span 8; }
+    .fale-conosco { grid-column: span 4; }
+
+    header h1 {
+        font-size: var(--tamanho-h1);
+    }
+}
+
+/* --- 4. DESKTOP GRANDE (min-width: 1200px) --- */
+@media (min-width: 1200px) {
+    .grid-container {
+        max-width: 1400px;
+    }
+    
+    nav a {
+        font-family: var(--fonte-familia-titulo);
+    }
+}
+
+/* --- 5. CELULAR PEQUENO (max-width: 380px) --- */
+@media (max-width: 380px) {
+    header h1 {
+        font-size: var(--tamanho-h2);
+    }
+}

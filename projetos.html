@@ -5,68 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projetos Sociais | Terra Renovada</title>
     <link rel="shortcut icon" href="imagens/favicon/favicon.ico">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/estilos_globais.css">
 </head>
 <body>
-    <header> 
+    <header>
         <img src="imagens/logonovasemtexto150.png" alt="Logo Fundação Terra Renovada">
         <h1>Terra Renovada</h1>
         <p class="slogan">A natureza renovada pelas nossas mãos.</p>
-
     </header>
-        <nav>
-                <a href="index.html">Início</a>
-                <a href="projetos.html">Projetos</a>
-                <a href="cadastro.html">Cadastro</a>
-        </nav>
-    <main>
-       <section>
-        <h2>Projetos Sociais da Fundação Terra Renovada</h2>
-        <h3>1.Projeto Reflorestar</h3>
 
-        <img src="imagens/imagensprojetos/projeto1350.png" alt="Projeto Reflorestar">
+    <nav class="nav-principal">
+        <input type="checkbox" class="menu-toggle" id="menu-toggle-id">
 
-            <p><strong>Objetivo:</strong> Plantio de árvores em áreas degradadas e reflorestamento de matas ciliares.
-            <br><strong>Atividades:</strong> Mutirões de plantio, acompanhamento do crescimento das mudas e manutenção das áreas.</p>
+        <label class="hamburguer-icon" for="menu-toggle-id">
+            <span class="barra"></span>
+            <span class="barra"></span>
+            <span class="barra"></span>
+        </label>
 
-        <h3>2.Projeto Limpeza e Conservação</h3>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
 
-        <img src="imagens/imagensprojetos/projeto2350.png" alt="Projeto Limpeza e Conservação">
+            <div class="dropdown">
+                <a href="projetos.html" class="dropbtn ativo">
+                    Projetos
+                    <span class="seta-dropdown">▼</span>
+                </a>
+                <div class="dropdown-content">
+                    <a href="#reflorestar">Reflorestar</a>
+                    <a href="#limpeza">Limpeza</a>
+                    <a href="#educacao">Educação</a>
+                    <a href="#comunidade">Comunidade</a>
+                </div>
+            </div>
+            <a href="cadastro.html">Cadastro</a>
+        </div>
+    </nav>
 
-            <p><strong>Objetivo:</strong> Limpeza de rios, praias, praças e parques urbanos.
-            <br><strong>Atividades:</strong> Coleta de lixo, separação de recicláveis e conscientização comunitária.</p>
+    <main class="grid-container">
+        <section class="grid-item-12">
+            <h2>Projetos Sociais da Fundação Terra Renovada</h2>
 
-        <h3>3.Projeto Educação Ambiental</h3>
+            <div class="cards-container">
+                
+                <article class="card">
+                    <img class="card-imagem" src="imagens/imagensprojetos/projeto1350.png" alt="Projeto Reflorestar">
+                    <div class="card-conteudo">
+                        <h3 id="reflorestar">1. Projeto Reflorestar</h3>
+                        <span class="badge-status badge-andamento">Em Andamento</span>
+                        <p><strong>Objetivo:</strong> Plantio de árvores em áreas degradadas e reflorestamento de matas ciliares.</p>
+                        <p><strong>Atividades:</strong> Mutirões de plantio, acompanhamento do crescimento das mudas e manutenção das áreas.</p>
+                        <div class="card-botoes">
+                            <a href="cadastro.html" class="btn btn-secundario-outline">Voluntariar</a>
+                        </div>
+                    </div>
+                </article>
 
-        <img src="imagens/imagensprojetos/projeto3350.png" alt="Projeto Educação Ambiental">
+                <article class="card">
+                    <img class="card-imagem" src="imagens/imagensprojetos/projeto2350.png" alt="Projeto Limpeza e Conservação">
+                    <div class="card-conteudo">
+                        <h3 id="limpeza">2. Projeto Limpeza e Conservação</h3>
+                        <span class="badge-status badge-andamento">Em Andamento</span>
+                        <p><strong>Objetivo:</strong> Limpeza de rios, praias, praças e parques urbanos.</p>
+                        <p><strong>Atividades:</strong> Coleta de lixo, separação de recicláveis e conscientização comunitária.</p>
+                        <div class="card-botoes">
+                            <a href="cadastro.html" class="btn btn-secundario-outline">Voluntariar</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <img class="card-imagem" src="imagens/imagensprojetos/projeto3350.png" alt="Projeto Educação Ambiental">
+                    <div class="card-conteudo">
+                        <h3 id="educacao">3. Projeto Educação Ambiental</h3>
+                        <span class="badge-status badge-concluido">Concluído</span>
+                        <p><strong>Objetivo:</strong> Levar conhecimento sobre sustentabilidade e preservação da natureza para escolas e comunidades.</p>
+                        <p><strong>Atividades:</strong> Palestras, oficinas de reciclagem, jogos educativos e visitas guiadas à natureza.</p>
+                        <div class="card-botoes">
+                            <a href="cadastro.html" class="btn btn-secundario-outline">Apoiar</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <img class="card-imagem" src="imagens/imagensprojetos/projeto4350.png" alt="Projeto Comunidade Verde">
+                    <div class="card-conteudo">
+                        <h3 id="comunidade">4. Projeto Comunidade Verde</h3>
+                        <span class="badge-status badge-andamento">Em Andamento</span>
+                        <p><strong>Objetivo:</strong> Engajar a população local em ações de sustentabilidade e melhorias ambientais.</p>
+                        <p><strong>Atividades:</strong> Hortas comunitárias, compostagem e capacitação para práticas sustentáveis.</p>
+                        <div class="card-botoes">
+                            <a href="cadastro.html" class="btn btn-secundario-outline">Voluntariar</a>
+                        </div>
+                    </div>
+                </article>
 
-            <p><strong>Objetivo:</strong> Levar conhecimento sobre sustentabilidade e preservação da natureza para escolas e comunidades.
-            <br><strong>Atividades:</strong> Palestras, oficinas de reciclagem, jogos educativos e visitas guiadas à natureza.</p>
+                <article class="card">
+                    <img class="card-imagem" src="imagens/imagensprojetos/projeto5350.png" alt="Projeto Voluntariado Ativo">
+                    <div class="card-conteudo">
+                        <h3>5. Projeto Voluntariado Ativo</h3>
+                        <span class="badge-status badge-andamento">Em Andamento</span>
+                        <p><strong>Objetivo:</strong> Engajar voluntários para atuarem em todos os projetos da ONG.</p>
+                        <p><strong>Atividades:</strong> Plantio de árvores, limpeza de áreas verdes, eventos educativos e campanhas de conscientização.</p>
+                        <div class="card-botoes">
+                            <a href="cadastro.html" class="btn btn-secundario-outline">Inscrever-se</a>
+                        </div>
+                    </div>
+                </article>
 
-        <h3>4.Projeto Comunidade Verde</h3>
-
-        <img src="imagens/imagensprojetos/projeto4350.png" alt="Projeto Comunidade Verde">
-
-            <p><strong>Objetivo:</strong> Engajar a população local em ações de sustentabilidade e melhorias ambientais.
-            <br><strong>Atividades:</strong> Hortas comunitárias, compostagem e capacitação para práticas sustentáveis.</p>
-
-        <h3>5.Projeto Voluntariado Ativo</h3>
-
-        <img src="imagens/imagensprojetos/projeto5350.png" alt="Projeto Voluntariado Ativo">
-
-            <p><strong>Objetivo:</strong> Engajar voluntários para atuarem em todos os projetos da ONG.
-            <br><strong>Atividades:</strong> Plantio de árvores, limpeza de áreas verdes, eventos educativos e campanhas de conscientização.</p>
-
-        <h3>6.Projeto Parcerias Sustentáveis</h3>
-
-        <img src="imagens/imagensprojetos/projeto6350.png" alt="Projeto Parcerias Sustentáveis">
-
-            <p><strong>Objetivo:</strong> Trabalhar com empresas e outros órgãos para patrocínio e doações de materiais.
-            <br><strong>Atividades:</strong> Desenvolvimento de projetos patrocinados, fornecimento de recursos e divulgação de ações.</p>
-        
+                <article class="card">
+                    <img class="card-imagem" src="imagens/imagensprojetos/projeto6350.png" alt="Projeto Parcerias Sustentáveis">
+                    <div class="card-conteudo">
+                        <h3>6. Projeto Parcerias Sustentáveis</h3>
+                        <span class="badge-status badge-concluido">Concluído</span>
+                        <p><strong>Objetivo:</strong> Trabalhar com empresas e outros órgãos para patrocínio e doações de materiais.</p>
+                        <p><strong>Atividades:</strong> Desenvolvimento de projetos patrocinados, fornecimento de recursos e divulgação de ações.</p>
+                        <div class="card-botoes">
+                            <a href="cadastro.html" class="btn btn-secundario-outline">Parceria</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </section>
-
-        <section>
+        
+        <section class="grid-item-12">
             <h2>Como ser Voluntário na Fundação Terra Renovada</h2>
             <img src="imagens/imagensprojetos/comoservoluntario300.png" alt="Como ser Voluntário na Fundação Terra Renovada">
             <p><strong>Cadastre-se no site:</strong>
@@ -74,31 +136,28 @@
                 <br>Preencha o formulário de voluntariado com informações básicas: nome, contato, idade e endereço.
             </p>
             <p>Voluntariado é mais do que ajudar</p>
+            <div style="text-align: center; margin-bottom: var(--espaco-lg);">
+                <a href="cadastro.html" class="btn btn-primario">
+                    Quero ser Voluntário Agora!
+                </a>
+            </div>
         </section>
 
-        <section>
+        <section class="grid-item-12">
             <h2>Como Doar</h2>
             <img src="imagens/imagensprojetos/comodoar300.png" alt="Como Doar">
             <p>Mesmo pequenas contribuições fazem grande diferença!</p>
             <h3>Tipos de doações</h3>
             
             <ul>
-                    <li><strong>Materiais:</strong> Sacos de lixo, luvas, pás, mudas, sementes, recipientes, materiais de oficina</li>
-            
-            
-                    <li><strong>Doação em dinheiro:</strong> Conta bancária da instituição, PIX, campanhas online(vaquinhas eletrônicas)</li>
-            
-            
-                    <li><strong>Voluntariado/mão de obra:</strong> Pessoas se inscrevem nas ações práticas</li>
-            
-            
-                    <li>Parcerias com empresas/patrocínio: Empresas podem patrocinar eventos, fornecer insumos, logística, divulgação</li>
-            
-            
-                    <li><strong>Doações recorrentes/"amigos da fundação"</strong>: Pessoas que doam mensalmente um valor fixo pequeno.</li>
-            
+                <li><strong>Materiais:</strong> Sacos de lixo, luvas, pás, mudas, sementes, recipientes, materiais de oficina</li>
+                <li><strong>Doação em dinheiro:</strong> Conta bancária da instituição, PIX, campanhas online (vaquinhas eletrônicas)</li>
+                <li><strong>Voluntariado/mão de obra:</strong> Pessoas se inscrevem nas ações práticas</li>
+                <li>Parcerias com empresas/patrocínio: Empresas podem patrocinar eventos, fornecer insumos, logística, divulgação</li>
+                <li><strong>Doações recorrentes/"amigos da fundação"</strong>: Pessoas que doam mensalmente um valor fixo pequeno.</li>
             </ul>
         </section>
+        
     </main>
     <footer>
         <p>&copy;2025 Instituição Terra Renovada </p>
