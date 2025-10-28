@@ -14,34 +14,37 @@
         <p class="slogan">A natureza renovada pelas nossas mãos.</p>
     </header>
 
-    <nav class="nav-principal">
-        <input type="checkbox" class="menu-toggle" id="menu-toggle-id">
+<nav class="nav-principal">
+    <input type="checkbox" class="menu-toggle" id="menu-toggle-id">
 
-        <label class="hamburguer-icon" for="menu-toggle-id">
-            <span class="barra"></span>
-            <span class="barra"></span>
-            <span class="barra"></span>
-        </label>
+    <label class="hamburguer-icon" for="menu-toggle-id">
+        <span class="barra"></span>
+        <span class="barra"></span>
+        <span class="barra"></span>
+    </label>
 
-        <div class="nav-links">
-            <a href="index.html" class="ativo">Início</a>
+    <div class="nav-links">
+        <a href="#" class="spa-link ativo" data-page="home">Início</a>
 
-            <div class="dropdown">
-                <a href="projetos.html" class="dropbtn">
-                    Projetos
-                    <span class="seta-dropdown">▼</span>
-                </a>
+        <div class="dropdown">
+            <a href="#" class="dropbtn spa-link" data-page="projetos">
+                Projetos
+                <span class="seta-dropdown">▼</span>
+            </a>
 
-                <div class="dropdown-content">
-                    <a href="projetos.html#reflorestar">Reflorestar</a>
-                    <a href="projetos.html#limpeza">Limpeza</a>
-                    <a href="projetos.html#educacao">Educação</a>
-                    <a href="projetos.html#comunidade">Comunidade</a>
-                </div>
+            <div class="dropdown-content">
+                <a href="#" class="spa-link" data-page="projetos#reflorestar">Reflorestar</a>
+                <a href="#" class="spa-link" data-page="projetos#limpeza">Limpeza</a>
+                <a href="#" class="spa-link" data-page="projetos#educacao">Educação</a>
+                <a href="#" class="spa-link" data-page="projetos#comunidade">Comunidade</a>
             </div>
-            <a href="cadastro.html">Cadastro</a>
         </div>
-    </nav>
+        <a href="#" class="spa-link" data-page="cadastro">Cadastro</a>
+    </div>
+</nav>
+
+<script src="js/spa.js" defer></script>
+
     <main class="grid-container">
         <section class="quem-somos grid-item-12">
             <h2>Quem Somos</h2>
